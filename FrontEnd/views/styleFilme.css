@@ -1,0 +1,142 @@
+/* Cores básicas */
+:root {
+    --vermelho: #e50914;
+    --fundo: #f5f5f5;
+    --texto: #333;
+    --borda: #ddd;
+}
+
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+    padding: 20px;
+}
+
+.pagina {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Cabeçalho */
+.cabecalho {
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--borda);
+}
+
+.titulo {
+    text-align: center;
+}
+
+.fa-solid fa-arrow-left{
+    color: var(--vermelho);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+h1 {
+    color: var(--vermelho);
+    margin: 10px 0;
+}
+
+/* Campos do formulário */
+.campo {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--borda);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+small {
+    color: #666;
+    font-size: 12px;
+}
+
+/* Gêneros */
+.generos {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.genero {
+    padding: 5px 15px;
+    background: #eee;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.genero:hover {
+    background: #ddd;
+}
+
+/* Estrelas de avaliação */
+.estrelas {
+    font-size: 24px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.estrelas span {
+    margin-right: 5px;
+}
+
+.estrelas span.ativa {
+    color: #ffc107;
+}
+
+/* Botões */
+.botoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.cancelar {
+    background: #eee;
+}
+
+.cancelar:hover {
+    background: #ddd;
+}
+
+.salvar {
+    background: var(--vermelho);
+    color: white;
+}
+
+.salvar:hover {
+    background: #c00812;
+}

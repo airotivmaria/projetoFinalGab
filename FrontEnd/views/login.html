@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login MovieList</title>
+    <link rel="stylesheet" href="cadastro.css">
+</head>
+<body>
+    <header>
+        <h1>Bem-Vindo de volta ao MovieList</h1>
+        <img src="logo.projeto2.png" alt="MovieList">
+    </header>
+    <h1>Faça login para acessar</h1>
+     <form id="cadastroForm">
+
+        <label for="email">E-mail</label>
+        <input type="e-mail" name="email" id="email" required>
+        <span class="error-message" id="emailError"></span>
+
+        <label for="senha">Senha</label>
+        <input type="password" name="senha" id="senha" required>
+        <span class="error-message" id="senhaError"></span>
+
+        <button type="submit" id="btnCadastrar">Cadastrar</button>
+        <a href="cadastro.html">Ainda não tenho cadastro</a>
+        <a href="#">Esqueci a senha</a>
+
+        <div id="mensagemSucesso" class="sucess-message"></div>
+    </form>
+
+    <script src="cadastro.js"></script>
+</body>
+</html>

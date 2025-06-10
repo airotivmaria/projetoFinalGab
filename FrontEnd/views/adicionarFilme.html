@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Filme - Meu MovieList</title>
+    <link rel="stylesheet" href="styleFilme.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="pagina">
+        <div class="cabecalho">
+            <a href="index.html" class="fa-solid fa-arrow-left"> Voltar</a>
+            <h1 class="titulo">Adicionar Novo Filme</h1>
+        </div>
+
+        <form class="formulario-filme">
+            <div class="campo">
+                <label for="titulo">Título do Filme*</label>
+                <input type="text" id="titulo" placeholder="Ex: O Poderoso Chefão" required>
+                <small>Obrigatório</small>
+            </div>
+
+            <div class="campo">
+                <label for="ano">Ano de Lançamento</label>
+                <input type="number" id="ano" placeholder="2023">
+            </div>
+
+            <div class="campo">
+                <label>Gênero</label>
+                <div class="generos">
+                    <span class="genero">Ação</span>
+                    <span class="genero">Comédia</span>
+                    <span class="genero">Drama</span>
+                    <span class="genero">Ficção</span>
+                    <span class="genero">Terror</span>
+                </div>
+            </div>
+
+            <div class="campo">
+                <label>Sua Avaliação</label>
+                <div class="estrelas">
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                    <span>★</span>
+                </div>
+                <small>Clique nas estrelas para avaliar</small>
+            </div>
+
+            <div class="campo">
+                <label for="comentarios">Seus Comentários</label>
+                <textarea id="comentarios" placeholder="O que você achou do filme?"></textarea>
+            </div>
+
+            <div class="botoes">
+                <button type="button" class="cancelar" >Cancelar</button>
+                <button type="submit" class="salvar">Salvar Filme</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="addFilme.js"></script>
+</body>
+</html>

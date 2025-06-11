@@ -45,7 +45,7 @@ app.get('/filmes', async (req, res) => {
 
     if (!email){
         return res.status(400).json({ erro: 'Email do usuário é obrigatório' });
-    } 
+    }
     const filmes = await Filme.find({dono: email});
     return res.send(filmes);
 })
@@ -57,12 +57,8 @@ app.delete('/:id', async (req, res) => {
 
 app.put('/:id', async (req, res) => {
     const editarFilme = await Filme.findByIdAndUpdate(req.params.id, {
-        titulo: req.body.titulo,
-        descricao: req.body.descricao,
-        anoLancamento: req.body.anoLancamento,
-        generoDoFilme: req.body.generoDoFilme,
-        avaliacao: req.body.avaliacao
-    });
+        titulo, descricao, anoLancamento, generoDoFilme, avaliacao, dono } = req.body
+    );
 
     return res.send(editarFilme);
 })

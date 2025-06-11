@@ -54,7 +54,6 @@ document.querySelectorAll('.estrelas span').forEach((estrela, index, array) => {
     });
 });
 
-
 document.querySelector('.cancelar').addEventListener('click', () => {
     if (confirm('Deseja cancelar a adição do filme?')) {
         window.location.href = 'index.html';

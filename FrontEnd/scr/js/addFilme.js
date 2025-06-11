@@ -1,7 +1,7 @@
 document.querySelector('.formulario-filme').addEventListener('submit', async function (e) {
     e.preventDefault();
 
-    const usario = JSON.parse(localStorage.getItem('usuario'));
+    const usuario = JSON.parse(localStorage.getItem('usuario'));
     const titulo = document.getElementById('titulo').value;
     const anoLancamento = document.getElementById('ano').value;
     const generoSelecionado = document.querySelector('.genero.selecionado')?.textContent || '';
@@ -14,7 +14,7 @@ document.querySelector('.formulario-filme').addEventListener('submit', async fun
         anoLancamento: parseInt(anoLancamento),
         generoDoFilme: generoSelecionado,
         avaliacao,
-        usario
+        usuario
     };
 
     // Adicione verificação de resposta.ok

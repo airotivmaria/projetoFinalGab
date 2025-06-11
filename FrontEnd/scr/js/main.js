@@ -2,13 +2,14 @@ document.addEventListener('DOMContentLoaded', async () => {
     const container = document.getElementById('lista-filmes');
     const usuario = JSON.parse(localStorage.getItem('usuario'));
 
+    const filmesUsario = filmes
     if (!usuario || !usuario.email) {
         container.innerHTML = '<p>Usuário não está logado.</p>';
         return;
     }
 
     try {
-        const resposta = await fetch('http://localhost:3000/filmes?email=${encodeURIComponent(usuario.email)}');
+        const resposta = await fetch(`http://localhost:3000/filmes?email=${encodeURIComponent(usuario.email)}`);
         const filmes = await resposta.json();
 
         filmes.forEach(filme => {

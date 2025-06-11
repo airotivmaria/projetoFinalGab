@@ -15,19 +15,21 @@ const Filme = mongoose.model('Filme', {
     descricao: String,
     anoLancamento: Number,
     generoDoFilme: String,
-    avaliacao: Number
+    avaliacao: Number,
+    dono: String
 });
 
 app.post('/adicionarfilme', async (req, res) => {
     try {
-        const { titulo, descricao, anoLancamento, generoDoFilme, avaliacao } = req.body;
+        const { titulo, descricao, anoLancamento, generoDoFilme, avaliacao, usuario } = req.body;
 
         const novoFilme = new Filme({
             titulo,
             descricao,
             anoLancamento,
             generoDoFilme,
-            avaliacao
+            avaliacao,
+            dono: usuario.email
         });
 
         await novoFilme.save();
@@ -39,7 +41,12 @@ app.post('/adicionarfilme', async (req, res) => {
 });
 
 app.get('/filmes', async (req, res) => {
-    const filmes = await Filme.find();
+    const email = req.query.email;
+
+    if (!email){
+        return res.status(400).json({ erro: 'Email do usuário é obrigatório' });
+    } 
+    const filmes = await Filme.find({dono: email});
     return res.send(filmes);
 })
 

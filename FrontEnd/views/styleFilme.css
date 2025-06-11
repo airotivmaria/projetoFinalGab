@@ -140,3 +140,12 @@ button {
 .salvar:hover {
     background: #c00812;
 }
+
+.genero.selecionado {
+    background-color: #007BFF;
+    color: white;
+}
+
+.estrelas span.selecionado {
+    color: gold;
+}

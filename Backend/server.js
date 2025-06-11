@@ -5,7 +5,13 @@ import cors from "cors";
 import bcrypt from "bcrypt";
 
 //Cadastro do filme
-mongoose.connect("mongodb+srv://mariavitoria6019:Rn492zDY2GZuAfEF@movielist.drrr4an.mongodb.net/?retryWrites=true&w=majority&appName=MovieList");
+mongoose.connect(
+  "mongodb+srv://mariavitoria6019:Rn492zDY2GZuAfEF@movielist.drrr4an.mongodb.net/movielist?retryWrites=true&w=majority"
+).then(() => {
+  console.log("Conectado ao MongoDB Atlas com sucesso!");
+}).catch((err) => {
+  console.error("Erro ao conectar ao MongoDB:", err);
+});
 const app = express();
 app.use(express.json());
 app.use(cors());

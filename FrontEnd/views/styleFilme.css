@@ -35,10 +35,10 @@ body {
     text-align: center;
 }
 
-.fa-solid fa-arrow-left{
+.fa-solid {
     color: var(--vermelho);
     text-decoration: none;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 h1 {
@@ -66,7 +66,7 @@ input, textarea {
 }
 
 textarea {
-    min-height: 100px;
+    min-height: 50px;
     resize: vertical;
 }
 
@@ -90,7 +90,7 @@ small {
 }
 
 .genero:hover {
-    background: #ddd;
+    background: #f18484;
 }
 
 /* Estrelas de avaliação */

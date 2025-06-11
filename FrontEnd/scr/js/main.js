@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         container.innerHTML = '<p>Usuário não está logado.</p>';
         return;
     }
-    
+
     try {
-        const resposta = await fetch('http://localhost:3000/filmes');
+        const resposta = await fetch('http://localhost:3000/filmes?email=${encodeURIComponent(usuario.email)}');
         const filmes = await resposta.json();
 
         filmes.forEach(filme => {

@@ -25,4 +25,3 @@ document.addEventListener('DOMContentLoaded', async () => {
         container.innerHTML = '<p>Erro ao carregar filmes.</p>';
     }
 });
-aaaaaaaaaaaaa

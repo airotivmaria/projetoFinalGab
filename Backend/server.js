@@ -1,6 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
 
+//instala o cors que nem instalou o express
+import cors from "cors";
+app.use(cors())
 //Cadastro do filme
 mongoose.connect("mongodb+srv://mariavitoria6019:Rn492zDY2GZuAfEF@movielist.drrr4an.mongodb.net/?retryWrites=true&w=majority&appName=MovieList");
 const app = express();

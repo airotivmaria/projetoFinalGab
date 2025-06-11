@@ -1,13 +1,13 @@
 import express from "express";
 import mongoose from "mongoose";
-
 //instala o cors que nem instalou o express
 import cors from "cors";
-app.use(cors())
+
 //Cadastro do filme
 mongoose.connect("mongodb+srv://mariavitoria6019:Rn492zDY2GZuAfEF@movielist.drrr4an.mongodb.net/?retryWrites=true&w=majority&appName=MovieList");
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 const Filme = mongoose.model('Filme', {
     titulo: String,
@@ -17,18 +17,25 @@ const Filme = mongoose.model('Filme', {
     avaliacao: Number
 });
 
-app.post('/adicionarfilme', async (req,res) => {
-    const novoFilme = new Filme({
-        titulo: req.body.titulo,
-        descricao: req.body.descricao,
-        anoLancamento: req.body.anoLancamento,
-        generoDoFilme: req.body.generoDoFilme,
-        avaliacao: req.body.avaliacao
-    })
-    
-    await novoFilme.save();
-    return res.send(novoFilme);
-})
+app.post('/adicionarfilme', async (req, res) => {
+    try {
+        const { titulo, descricao, anoLancamento, generoDoFilme, avaliacao } = req.body;
+
+        const novoFilme = new Filme({
+            titulo,
+            descricao,
+            anoLancamento,
+            generoDoFilme,
+            avaliacao
+        });
+
+        await novoFilme.save();
+        res.status(201).send(novoFilme);
+    } catch (erro) {
+        console.error(erro);
+        res.status(500).send({ erro: 'Erro ao adicionar o filme' });
+    }
+});
 
 app.get('/filmes', async (req, res) => {
     const filmes = await Filme.find();
@@ -67,15 +74,15 @@ app.post('/cadastro', async (req, res) => {
         email: req.body.email,
         senha: req.body.senha
     })
+
     await cadastroUsuario.save();
-    return res.send(cadastroUsuario);
+     res.send(cadastroUsuario);
 });
 
 app.get('/usuarios', async (req, res) => {
     const usuario = await Usuario.find();
     res.send(usuario);
 })
-
 
 app.listen(3000);
 

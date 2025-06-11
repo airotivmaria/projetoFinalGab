@@ -31,7 +31,7 @@ document.getElementById('cadastroForm').addEventListener('submit', async (e) => 
         const data = await response.json();
 
         if (!response.ok) {
-            // Mostrar erros específicos nos campos
+    
             if (data.errors) {
                 data.errors.forEach(err => {
                     const errorField = document.getElementById(`${err.field}Error`);
@@ -48,7 +48,7 @@ document.getElementById('cadastroForm').addEventListener('submit', async (e) => 
         document.getElementById('mensagemSucesso').style.color = 'green';
         document.getElementById('cadastroForm').reset();
 
-        // Redirecionar após feedback visual
+    
         setTimeout(() => {
             window.location.href = 'index.html';
         }, 3000);

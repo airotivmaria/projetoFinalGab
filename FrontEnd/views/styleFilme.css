@@ -149,3 +149,17 @@ button {
 .estrelas span.selecionado {
     color: gold;
 }
+
+.error-message {
+    color: #ff4444;
+    font-size: 0.8rem;
+    margin-top: 0.2rem;
+    display: block;
+}
+
+.sucess-message {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    border-radius: 4px;
+    text-align: center;
+}
